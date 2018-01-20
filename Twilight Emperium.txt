@@ -1,0 +1,9 @@
+""" Twilight Emperium 
+map generator
+game
+
+Start with a map generator
+Find a hex grid template
+Then maybe a generator for the tiles? 
+Or a straight up iterator, that'd be fun to practice. 
+"""

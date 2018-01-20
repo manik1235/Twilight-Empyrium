@@ -22,10 +22,10 @@ def hex_tile_generator(builtin='ordered5', n=None, tile_stack=None):
 
 
     """
-    rand = random.
+    rand = random.SystemRandom()
     built_ins = {'builtin1': [2, 1, 4, 3, 5],
                  'ordered5': [1, 2, 3, 4, 5],
-                 'random': rand.choice(set(range(1, n))),
+                 'random': rand.sample(range(1, n + 1), n),
                  'ordered29': list(range(1,30)),
                  }
 

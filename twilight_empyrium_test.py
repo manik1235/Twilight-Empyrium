@@ -27,8 +27,10 @@ class Test_twilight_empyrium(unittest.TestCase):
         known_answers = [
             RandBuiltins('random', 29, None),
             RandBuiltins('random', 10, None),
+            RandBuiltins('random', 13, None),
             ]
 
         for ans in known_answers:
             test_te = list(te.hex_tile_generator(builtin=ans.builtin, n=ans.n, tile_stack=ans.tile_stack))      
+            print('n={}, output={}'.format(ans.n, test_te))
             self.assertEqual(len(test_te), ans.n)

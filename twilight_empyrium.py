@@ -12,7 +12,7 @@ import functools
 # from random import SystemRandom # can't get this to work yet
 import random
 
-def hex_tile_generator(builtin='ordered5', n=None, tile_stack=None):
+def hex_tile_generator(builtin='ordered5', n=1, tile_stack=None):
     """ generates n tiles from list tilestack
 
     hex_tile_generator(builtin='builtin1')
@@ -48,4 +48,13 @@ def hex_tile_generator(builtin='ordered5', n=None, tile_stack=None):
 if __name__ == '__main__':
     """ get a generator
     """
-    te_gen = grid_tile_generator()
+    print('Available Built-ins:\nbuiltin1\nordered5\nrandom\nordered29\n')
+    r_builtin = input("Hello! Which built-in would you like to use? ")
+    if r_builtin == 'random':
+        r_n = input("how many random tiles would you like to generate? ")
+        r_n = int(r_n)
+        te_gen = hex_tile_generator(builtin=r_builtin, n=r_n)
+    else:
+        te_gen = hex_tile_generator(builtin=r_builtin)
+
+    print(list(te_gen))

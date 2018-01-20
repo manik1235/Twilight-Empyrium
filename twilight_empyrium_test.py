@@ -12,13 +12,23 @@ class Test_twilight_empyrium(unittest.TestCase):
 
     def test_hex_tile_generator_known_answer(self):
         Ans = namedtuple('Ans', ['input', 'ans'])
-        known_answers_hex_tile_generator = [
+        known_answers = [
             Ans('builtin1', [2, 1, 4, 3, 5]),
             Ans('ordered5', [1, 2, 3, 4, 5]),
             ]
 
-        for ans in known_answers_hex_tile_generator:
+        for ans in known_answers:
             test_te = list(te.hex_tile_generator(ans.input))
             self.assertListEqual(ans.ans, test_te)
 
     def test_hex_tile_generator_random(self):
+        RandBuiltins = namedtuple('RandBuiltins', ['builtin', 'n', 'tile_stack'])
+
+        known_answers = [
+            RandBuiltins('random', 29, None),
+            RandBuiltins('random', 10, None),
+            ]
+
+        for ans in known_answers:
+            test_te = list(te.hex_tile_generator(builtin=ans.builtin, n=ans.n, tile_stack=ans.tile_stack))      
+            self.assertEqual(len(test_te), ans.n)

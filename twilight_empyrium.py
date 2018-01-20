@@ -9,7 +9,8 @@ Or a straight up iterator, that'd be fun to practice.
 """
 
 import functools
-from random import SystemRandom as rand
+# from random import SystemRandom # can't get this to work yet
+import random
 
 def hex_tile_generator(builtin='ordered5', n=None, tile_stack=None):
     """ generates n tiles from list tilestack
@@ -21,6 +22,7 @@ def hex_tile_generator(builtin='ordered5', n=None, tile_stack=None):
 
 
     """
+    rand = random.
     built_ins = {'builtin1': [2, 1, 4, 3, 5],
                  'ordered5': [1, 2, 3, 4, 5],
                  'random': rand.choice(set(range(1, n))),
